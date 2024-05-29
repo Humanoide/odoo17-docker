@@ -1,0 +1,22 @@
+Para instalar fail2ban en ubuntu 24.04
+
+https://www.airix.net/index.php?option=com_content&view=article&id=89:ubuntu-2404-with-fail2ban-issue-fix&catid=53:featured&Itemid=271
+
+cd /tmp/
+# 1) download deb package and signature:
+wget -O fail2ban.deb https://github.com/fail2ban/fail2ban/releases/download/1.1.0/fail2ban_1.1.0-1.upstream1_all.deb
+wget -O fail2ban.deb.asc https://github.com/fail2ban/fail2ban/releases/download/1.1.0/fail2ban_1.1.0-1.upstream1_all.deb.asc
+
+
+# 5a) install package using dpkg (standalone package, don't regard dependencies):
+sudo dpkg -i fail2ban.deb
+# if the package introduces some "broken" dependencies (I don't think so in case of fail2ban which has few dependencies),
+# to fix the unmet dependency issue, run this:
+sudo apt -f install
+
+
+# Start the service:
+sudo systemctl start fail2ban
+
+# And check the status if the service is running well:
+sudo systemctl status fail2ban
