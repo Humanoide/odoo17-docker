@@ -48,3 +48,6 @@ git clone -b 17.0 https://github.com/OCA/server-backend.git
 git clone -b 17.0 https://github.com/OCA/e-commerce.git 
 git clone -b 17.0 https://github.com/OCA/server-auth.git
 git clone -b 17.0 https://github.com/OCA/edi.git
+git clone -b 17.0 https://github.com/OCA/multi-company.git
+git clone -b 17.0 https://github.com/OCA/hr-attendance.git
+git clone -b 17.0 https://github.com/OCA/field-service.git
