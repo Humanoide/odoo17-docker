@@ -1,0 +1,13 @@
+pip3 install dropbox
+
+
+pip3 install pyncclient
+
+
+pip3 install boto3
+
+
+pip3 install nextcloud-api-wrapper
+
+
+pip3 install paramiko
