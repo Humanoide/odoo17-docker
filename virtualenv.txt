@@ -1,0 +1,1 @@
+source /var/odoo/arizona.cloudpepper.site/venv/bin/activate
