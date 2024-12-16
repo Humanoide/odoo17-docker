@@ -1,9 +1,9 @@
-Tomás A. Solé Mora
+
 17:51
 websocket_keep_alive_timeout = 600
 websocket_rate_limit_burst = 10
 websocket_rate_limit_delay = 0.2
-Tomás A. Solé Mora
+
 17:53
 # Redirect websocket requests to odoo gevent port
   location /websocket {
