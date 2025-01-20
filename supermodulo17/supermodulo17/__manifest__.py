@@ -212,6 +212,9 @@ Long description of module's purpose
 'web_tour',
 'web_unsplash',
 'web',
+'disable_odoo_online',
+'remove_odoo_enterprise',
+
     
       
     ],
