@@ -1,0 +1,8 @@
+Opción con una regla personalizada de redirección (Nginx nativo):
+
+Si necesitas redirigir específicamente esa ruta a otro destino, puedes configurarlo en el bloque avanzado del Proxy Host:
+
+
+location = /web/database/manager {
+    return 301 https://loquesea.aplicacionodoo.com; # Redirige a la página principal
+}
