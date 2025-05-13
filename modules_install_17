@@ -53,3 +53,4 @@ git clone -b 17.0 https://github.com/OCA/hr-attendance.git
 git clone -b 17.0 https://github.com/OCA/field-service.git
 git clone -b 17.0 https://github.com/OCA/spreadsheet.git
 git clone -b 17.0 https://github.com/OCA/sign.git
+git clone -b 17.0 https://github.com/OCA/agreement.git
