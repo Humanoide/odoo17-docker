@@ -1,0 +1,15 @@
+* situarse en :
+
+/root/docker/portainer
+
+
+
+* haz copia de los datos :
+
+tar -czf backup_portainer_data_$(date +%F).tgz portainer_data/
+
+* después
+
+docker compose pull
+docker compose up -d
+docker compose logs -f portainer
