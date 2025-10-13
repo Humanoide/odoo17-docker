@@ -2,6 +2,7 @@
 
 /root/docker/portainer
 
+(ahí estará el portainer y el docker-compose.yml con el que se creó portainer)
 
 
 * haz copia de los datos :
