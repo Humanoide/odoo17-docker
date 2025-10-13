@@ -1,0 +1,7 @@
+
+
+ERROR COLATION
+
+Al actualizar la base de datos porstgres , da un error , que se arregla metiendose por portainer en el contenedor y ejecutar esto
+
+PGPASSWORD="$POSTGRES_PASSWORD" psql -U "$POSTGRES_USER" -d template1 -c "ALTER DATABASE postgres REFRESH COLLATION VERSION;"
