@@ -14,3 +14,9 @@ tar -czf backup_portainer_data_$(date +%F).tgz portainer_data/
 docker compose pull
 docker compose up -d
 docker compose logs -f portainer
+
+COMPROBACIONES POSTERIORES
+
+* comprobar la ip de portainer
+* comprobar la network si se ha conectado odoo y nginx a través del nombre del contenedor
+
