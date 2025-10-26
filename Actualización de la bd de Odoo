@@ -24,6 +24,12 @@ max_cron_threads = 1
 
 =========================================================================================================================
 
+Con esta opción no es necesario modificar el odoo conf
+
+odoo --no-http --workers=0 --max-cron-threads=0 --load=base,web \
+--db_host=odoo17-db-1 --db_user=odoo --db_password=odoo \
+--stop-after-init -u all -d nombrebasededatos
+===========================================================================================================================
 
 Antiguo sin base de datos
 
