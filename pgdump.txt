@@ -1,4 +1,4 @@
-sudo nano /usr/local/bin/backup-odoo14.sh
+sudo nano /usr/local/bin/backup-odoo17.sh
 
 script
 ================================================================================================
@@ -6,7 +6,7 @@ script
 #!/bin/bash
 
 # === CONFIGURACIÓN ===========================
-CONTAINER="odoo14-db-1"
+CONTAINER="odoo17-db-1"
 USER="odoo"
 BACKUP_DIR="/opt/backups_odoo14"
 DATABASES=("una_db" "otra_db" "tercera_db")   # ← añade tus bases
@@ -45,11 +45,11 @@ cron
 
 ====================================================================================================
 
-  0 */6 * * * /usr/local/bin/backup-odoo14.sh >/var/log/backup_odoo14.log 2>&1
+  0 */6 * * * /usr/local/bin/backup-odoo17.sh >/var/log/backup_odoo17.log 2>&1
 
 
 ¿Qué hace?
 
 Ejecuta el script a las 00:00, 06:00, 12:00 y 18:00 cada día.
 
-Guarda el log en /var/log/backup_odoo14.log.
+Guarda el log en /var/log/backup_odoo17.log.
