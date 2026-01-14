@@ -19,7 +19,7 @@ mkdir -p "$BACKUP_DIR"
 # Fecha del backup
 FECHA=$(date +"%Y%m%d_%H%M")
 
-echo "=== Iniciando backup Odoo14 ==="
+echo "=== Iniciando backup Odoo17 ==="
 
 for DB in "${DATABASES[@]}"; do
     ARCHIVO="$BACKUP_DIR/${DB}_${FECHA}.dump"
