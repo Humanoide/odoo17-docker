@@ -1,0 +1,55 @@
+sudo nano /usr/local/bin/backup-odoo14.sh
+
+script
+================================================================================================
+
+#!/bin/bash
+
+# === CONFIGURACIÓN ===========================
+CONTAINER="odoo14-db-1"
+USER="odoo"
+BACKUP_DIR="/opt/backups_odoo14"
+DATABASES=("una_db" "otra_db" "tercera_db")   # ← añade tus bases
+RETENCION_DIAS=4
+# ============================================
+
+# Crear carpeta si no existe
+mkdir -p "$BACKUP_DIR"
+
+# Fecha del backup
+FECHA=$(date +"%Y%m%d_%H%M")
+
+echo "=== Iniciando backup Odoo14 ==="
+
+for DB in "${DATABASES[@]}"; do
+    ARCHIVO="$BACKUP_DIR/${DB}_${FECHA}.dump"
+    echo "Backup de la base $DB → $ARCHIVO"
+
+    docker exec "$CONTAINER" pg_dump -U "$USER" "$DB" > "$ARCHIVO"
+
+    if [ $? -eq 0 ]; then
+        echo "✔ Backup completado: $ARCHIVO"
+    else
+        echo "❌ ERROR exportando la base $DB"
+    fi
+done
+
+echo "=== Eliminando backups de más de $RETENCION_DIAS días ==="
+find "$BACKUP_DIR" -type f -mtime +$RETENCION_DIAS -name "*.dump" -exec rm {} \;
+
+echo "=== Backups finalizados ==="
+
+
+
+cron
+
+====================================================================================================
+
+  0 */6 * * * /usr/local/bin/backup-odoo14.sh >/var/log/backup_odoo14.log 2>&1
+
+
+¿Qué hace?
+
+Ejecuta el script a las 00:00, 06:00, 12:00 y 18:00 cada día.
+
+Guarda el log en /var/log/backup_odoo14.log.
